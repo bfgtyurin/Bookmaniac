@@ -1,7 +1,5 @@
 package com.tyurin.dao;
 
-import com.tyurin.domain.User;
-
 import java.io.Serializable;
 import java.util.List;
 

@@ -1,7 +1,6 @@
 package com.tyurin.dao;
 
 import com.tyurin.domain.Book;
-import com.tyurin.domain.User;
 
 import java.sql.Connection;
 import java.util.List;

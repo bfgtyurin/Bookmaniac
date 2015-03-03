@@ -8,6 +8,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.sql.Connection;
+import java.util.List;
 
 import static org.junit.Assert.*;
 
@@ -40,5 +41,10 @@ public class HsqldbUserDaoTest {
         logger.info(user.getName());
     }
 
-
+    @Test
+    public void getAllTest() {
+        List<User> users = dao.getAll();
+        assertNotNull(users);
+        assertTrue(users.size() > 0);
+    }
 }

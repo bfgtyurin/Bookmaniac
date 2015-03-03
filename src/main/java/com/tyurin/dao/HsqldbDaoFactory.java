@@ -19,7 +19,6 @@ public class HsqldbDaoFactory implements DaoFactory {
     private String url;
     private String user;
     private String password;
-    private String driverClassName;
     private Map<Class<? extends BasicEntity>, DaoCreator<Connection>> creators;
 
 
@@ -28,7 +27,7 @@ public class HsqldbDaoFactory implements DaoFactory {
         this.url = resourceBundle.getString("jdbc.url");
         this.user = resourceBundle.getString("jdbc.user");
         this.password = resourceBundle.getString("jdbc.password");
-        this.driverClassName = resourceBundle.getString("jdbc.driverClassName");
+        String driverClassName = resourceBundle.getString("jdbc.driverClassName");
 
         try {
             Class.forName(driverClassName);
@@ -60,6 +59,4 @@ public class HsqldbDaoFactory implements DaoFactory {
         DaoCreator<Connection> daoCreator = creators.get(dao);
         return daoCreator.create(connection);
     }
-
-
 }
