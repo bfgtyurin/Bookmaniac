@@ -7,6 +7,9 @@ public class User extends BasicEntity {
     private String name;
     private Set<UserBookRelationship> books = new HashSet<>();
 
+    public User() {
+    }
+
     public User(String name) {
         this.name = name;
     }
