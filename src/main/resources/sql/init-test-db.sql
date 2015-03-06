@@ -1,5 +1,41 @@
+CREATE TABLE USER
+(
+    ID BIGINT PRIMARY KEY NOT NULL IDENTITY,
+    NAME VARCHAR(255) NOT NULL
+);
+CREATE TABLE CATEGORY
+(
+    ID BIGINT PRIMARY KEY NOT NULL IDENTITY,
+    NAME VARCHAR(255) NOT NULL
+);
+CREATE TABLE BOOK
+(
+    ID BIGINT PRIMARY KEY NOT NULL IDENTITY,
+    NAME VARCHAR(255) NOT NULL,
+    DESCRIPTION VARCHAR(255) NOT NULL,
+    AUTHOR VARCHAR(255) NOT NULL,
+    CATEGORY_ID BIGINT NOT NULL,
+    FOREIGN KEY (CATEGORY_ID) REFERENCES CATEGORY (ID)
+);
+
 INSERT INTO USER (ID, NAME) VALUES (1001, 'Dummy user1');
 INSERT INTO USER (ID, NAME) VALUES (1002, 'Dummy user2');
 INSERT INTO USER (ID, NAME) VALUES (1003, 'Dummy user3');
 INSERT INTO USER (ID, NAME) VALUES (1004, 'Dummy user4');
 INSERT INTO USER (ID, NAME) VALUES (1005, 'Dummy user5');
+
+INSERT INTO CATEGORY (ID, NAME ) VALUES (1001, 'Классика');
+INSERT INTO CATEGORY (ID, NAME ) VALUES (1002, 'Современная проза');
+INSERT INTO CATEGORY (ID, NAME ) VALUES (1003, 'Фантастика');
+INSERT INTO CATEGORY (ID, NAME ) VALUES (1004, 'Боевики');
+INSERT INTO CATEGORY (ID, NAME ) VALUES (1005, 'Фэнтези');
+INSERT INTO CATEGORY (ID, NAME ) VALUES (1006, 'Медицина');
+INSERT INTO CATEGORY (ID, NAME ) VALUES (1007, 'Наука, Образование');
+INSERT INTO CATEGORY (ID, NAME ) VALUES (1008, 'История');
+INSERT INTO CATEGORY (ID, NAME ) VALUES (1009, 'Публицистика');
+
+INSERT INTO BOOK (ID, NAME, DESCRIPTION, AUTHOR, CATEGORY_ID) VALUES (1001, '1984', 'Роман-антиутопия Джорджа Оруэлла, изданный в 1949 году.', 'Джордж Оруэлл', 1001);
+INSERT INTO BOOK (ID, NAME, DESCRIPTION, AUTHOR, CATEGORY_ID) VALUES (1002, 'Повелитель мух', 'Дебютный аллегорический роман английского писателя, лауреата Нобелевской премии по литературе, Уильяма Голдинга, вышедший в 1954 году.', 'Уильям Голдинг', 1001);
+INSERT INTO BOOK (ID, NAME, DESCRIPTION, AUTHOR, CATEGORY_ID) VALUES (1003, 'Пикник на обочине', 'Фантастический роман братьев Стругацких, изданный впервые в 1972 году.', 'Аркадий и Борис Стругацкие', 1003);
+
+

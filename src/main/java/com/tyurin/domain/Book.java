@@ -7,14 +7,17 @@ public class Book extends BasicEntity {
     private String name;
     private String description;
     private String author;
-    private Category category;
+    private Long category;
     private Set<UserBookRelationship> userBookRelationship = new HashSet<>();
 
-    public Book(String name, Category category) {
+    public Book() {
+    }
+
+    public Book(String name, Long category) {
         this(name, category, "", "");
     }
 
-    public Book(String name, Category category, String description, String author) {
+    public Book(String name, Long category, String description, String author) {
         this.name = name;
         this.category = category;
         this.description = description;
@@ -45,11 +48,11 @@ public class Book extends BasicEntity {
         this.author = author;
     }
 
-    public Category getCategory() {
+    public Long getCategory() {
         return category;
     }
 
-    public void setCategory(Category category) {
+    public void setCategory(Long category) {
         this.category = category;
     }
 
